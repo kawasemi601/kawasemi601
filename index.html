@@ -1,38 +1,95 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            line-height: 1.6;
-        }
-        h1 {
-            color: #333;
-            border-bottom: 2px solid #ccc;
-            padding-bottom: 10px;
-        }
-        .section {
-            margin: 20px 0;
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080b16">
+  <meta name="description" content="AI Agent ERP Lab — AIエージェントとERPの未来を、実験し、設計し、動かす。">
+  <title>AI Agent ERP Lab — 知能が、業務を動かす。</title>
+  <style>
+    :root{color-scheme:dark;--bg:#080b16;--panel:#0e1322;--ink:#f4f7ff;--muted:#a3acc1;--cyan:#73f5e3;--blue:#7aa7ff;--violet:#b492ff;--line:rgba(185,205,255,.13);--mono:"SFMono-Regular",Consolas,"Liberation Mono",monospace;--sans:Inter,"Noto Sans JP","Hiragino Kaku Gothic ProN",Meiryo,sans-serif}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.7;overflow-x:hidden}body:before{content:"";position:fixed;z-index:0;pointer-events:none;inset:-35%;background:radial-gradient(ellipse at 24% 28%,rgba(41,67,153,.21),transparent 34%),radial-gradient(ellipse at 75% 45%,rgba(69,35,132,.18),transparent 31%),radial-gradient(ellipse at 55% 80%,rgba(17,91,119,.14),transparent 35%);filter:blur(44px);animation:galaxyDrift 85s ease-in-out infinite alternate}@keyframes galaxyDrift{from{transform:translate3d(-2%,1%,0) rotate(-5deg) scale(1)}to{transform:translate3d(2%,-1%,0) rotate(5deg) scale(1.08)}}a{color:inherit;text-decoration:none}button{font:inherit}.wrap{width:min(1160px,calc(100% - 48px));margin-inline:auto}.sky{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.76}.topbar,main,.footer{position:relative;z-index:1}.grain{position:fixed;inset:0;z-index:5;pointer-events:none;opacity:.11;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.2'/%3E%3C/svg%3E")}
+    .topbar{height:82px;display:flex;align-items:center;justify-content:space-between;position:relative;z-index:10;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:.01em}.brand-mark{width:35px;height:35px;border:1px solid rgba(115,245,227,.42);border-radius:11px;display:grid;place-items:center;color:var(--cyan);box-shadow:0 0 28px rgba(115,245,227,.12);font-size:16px}.brand small{display:block;color:#8994aa;font:10px var(--mono);letter-spacing:.16em}.nav{display:flex;align-items:center;gap:34px;color:#b5bed0;font-size:13px}.nav a:hover{color:var(--cyan)}.nav-cta{padding:10px 17px;border:1px solid rgba(115,245,227,.35);border-radius:5px;color:var(--cyan)!important}.menu-toggle{display:none;background:none;border:0;color:white;font-size:24px}
+    .hero{min-height:670px;display:grid;grid-template-columns:1.02fr .98fr;align-items:center;position:relative;padding:72px 0 88px}.hero:before{content:"";position:absolute;width:580px;height:580px;right:0;top:40px;border-radius:50%;background:radial-gradient(circle,rgba(68,90,201,.17),rgba(15,22,48,.08) 45%,transparent 70%);filter:blur(12px);pointer-events:none}.hero-copy{position:relative;z-index:2}.eyebrow{display:flex;align-items:center;gap:10px;color:var(--cyan);font:11px var(--mono);letter-spacing:.17em;text-transform:uppercase}.pulse{width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 12px var(--cyan);animation:pulse 1.7s infinite}@keyframes pulse{50%{opacity:.38;box-shadow:0 0 3px var(--cyan)}}h1{font-size:clamp(42px,5.3vw,70px);line-height:1.22;letter-spacing:-.045em;margin:25px 0 20px;font-weight:650}.gradient{background:linear-gradient(105deg,#f5f7ff 8%,#a7c6ff 47%,#79f4df 100%);-webkit-background-clip:text;background-clip:text;color:transparent}.hero-copy>p{max-width:480px;color:#a7b1c5;font-size:15px;line-height:2}.hero-actions{display:flex;gap:13px;margin-top:32px;flex-wrap:wrap}.button{display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:13px 20px;border-radius:5px;font-size:13px;font-weight:600;transition:.25s transform,.25s box-shadow,.25s border-color}.button:hover{transform:translateY(-2px)}.button-primary{color:#071219;background:linear-gradient(110deg,#75eedf,#9bbdff);box-shadow:0 8px 30px rgba(89,206,214,.15)}.button-primary:hover{box-shadow:0 10px 34px rgba(89,206,214,.3)}.button-ghost{border:1px solid var(--line);color:#d2d9e8}.button-ghost:hover{border-color:rgba(115,245,227,.5)}.hero-note{margin-top:38px;display:flex;align-items:center;gap:11px;color:#8791a5;font:10px var(--mono);letter-spacing:.08em}.hero-note:before{content:"";width:34px;height:1px;background:#4c5a73}
+    .visual{height:480px;position:relative;z-index:1}.visual canvas{position:absolute;inset:0;width:100%;height:100%}.orb-label{position:absolute;font:10px var(--mono);letter-spacing:.09em;color:#91a0b9}.label-top{left:15%;top:13%}.label-bottom{right:4%;bottom:17%}.hud{position:absolute;right:4%;top:18%;width:176px;padding:13px 14px;border:1px solid rgba(146,171,255,.22);border-radius:7px;background:rgba(11,16,32,.76);backdrop-filter:blur(12px);box-shadow:0 12px 40px #03051055}.hud-title{font:9px var(--mono);letter-spacing:.12em;color:#99a7bf}.hud-row{display:flex;justify-content:space-between;margin-top:9px;font-size:10px;color:#b9c3d4}.hud-row b{color:var(--cyan);font:10px var(--mono)}.hud-meter{height:3px;background:#222c40;margin-top:10px;border-radius:3px;overflow:hidden}.hud-meter i{display:block;width:73%;height:100%;background:linear-gradient(90deg,#7b8fff,#70f0db);animation:meter 3s ease-in-out infinite alternate}@keyframes meter{to{width:89%}}.data-chip{position:absolute;left:2%;bottom:20%;display:flex;gap:10px;align-items:center;padding:9px 12px;border:1px solid rgba(115,245,227,.18);border-radius:5px;background:#0a1220cc;color:#aab8cc;font:9px var(--mono);letter-spacing:.07em}.data-chip span{color:var(--cyan)}
+    .ticker{border-block:1px solid var(--line);overflow:hidden;background:#0b0f1c}.ticker-track{display:flex;width:max-content;animation:marquee 32s linear infinite;padding:15px 0;color:#8390a8;font:10px var(--mono);letter-spacing:.12em}.ticker-track span{padding:0 34px}.ticker-track b{color:#6ce8d7;font-weight:400;margin-right:9px}@keyframes marquee{to{transform:translateX(-50%)}}
+    section{position:relative}.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:36px}.section-kicker{font:10px var(--mono);letter-spacing:.18em;color:var(--cyan);text-transform:uppercase}.section-head h2{font-size:clamp(27px,3.4vw,42px);line-height:1.35;letter-spacing:-.035em;margin:12px 0 0;font-weight:600}.section-head p{max-width:370px;color:var(--muted);font-size:13px;margin:0}.capabilities{padding:104px 0 112px}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.card{padding:26px 25px 28px;min-height:235px;border:1px solid var(--line);border-radius:8px;background:linear-gradient(145deg,rgba(18,26,45,.8),rgba(11,15,29,.72));position:relative;overflow:hidden;transition:.35s transform,.35s border-color}.card:after{content:"";position:absolute;inset:auto -60px -100px auto;width:180px;height:180px;background:radial-gradient(circle,rgba(96,194,218,.12),transparent 68%);transition:.35s}.card:hover{transform:translateY(-5px);border-color:rgba(115,245,227,.34)}.card:hover:after{transform:scale(1.5)}.card-number{font:10px var(--mono);color:#74819a;letter-spacing:.14em}.card-icon{width:39px;height:39px;margin:24px 0 16px;border-radius:10px;background:linear-gradient(140deg,#1a2941,#151a31);border:1px solid #2a3b56;display:grid;place-items:center;color:var(--cyan);font-size:17px}.card h3{font-size:16px;margin:0 0 9px}.card p{margin:0;color:#97a2b8;font-size:12px;line-height:1.9}
+    .lab{padding:22px 0 110px}.lab-panel{display:grid;grid-template-columns:.9fr 1.1fr;gap:44px;padding:39px;border:1px solid var(--line);border-radius:10px;background:radial-gradient(ellipse at 85% 20%,rgba(75,106,190,.14),transparent 40%),#0c1120}.lab-copy{padding:13px 0}.lab-copy h2{font-size:32px;line-height:1.4;letter-spacing:-.03em;margin:13px 0}.lab-copy p{color:var(--muted);font-size:13px;line-height:2}.lab-copy .button{margin-top:14px}.flow{border:1px solid #26334a;border-radius:7px;background:#090e1b;padding:20px 21px;min-height:255px;position:relative;overflow:hidden}.flow-top{display:flex;justify-content:space-between;color:#8492aa;font:9px var(--mono);letter-spacing:.1em;padding-bottom:14px;border-bottom:1px solid #202b3e}.live{color:var(--cyan)}.flow-list{padding-top:10px}.flow-row{display:grid;grid-template-columns:28px 1fr auto;gap:11px;align-items:center;padding:10px 0;color:#c4cede;font-size:11px}.flow-icon{width:26px;height:26px;border-radius:7px;display:grid;place-items:center;background:#151f33;color:#81e9db;font-size:11px}.flow-status{font:9px var(--mono);color:#7cead8}.flow-status.done{color:#8794ab}.flow-line{position:absolute;left:33px;top:66px;bottom:45px;width:1px;background:linear-gradient(#74ebdc66,#8196ff66,transparent)}.flow-row{position:relative}.flow-row:nth-child(2){animation:glowrow 3s 1s infinite}.flow-row:nth-child(3){animation:glowrow 3s 2s infinite}@keyframes glowrow{50%{background:linear-gradient(90deg,transparent,rgba(69,121,154,.12),transparent)}}
+    .manifesto{padding:0 0 100px}.manifesto-inner{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:33px 0;display:flex;justify-content:space-between;gap:30px;align-items:center}.manifesto blockquote{margin:0;font-size:19px;letter-spacing:-.02em;max-width:700px}.manifesto blockquote span{color:var(--cyan)}.manifesto cite{font:10px var(--mono);font-style:normal;color:#7f8ba2;letter-spacing:.12em;white-space:nowrap}
+    .contact{padding:20px 0 95px}.contact-box{text-align:center;padding:57px 25px;border:1px solid rgba(115,245,227,.2);border-radius:10px;background:radial-gradient(ellipse at 50% 120%,rgba(67,125,176,.18),transparent 56%),linear-gradient(150deg,#101629,#0b1020)}.contact-box .section-kicker{justify-content:center}.contact-box h2{font-size:clamp(29px,4vw,45px);line-height:1.35;letter-spacing:-.04em;margin:14px 0}.contact-box p{color:var(--muted);font-size:13px;margin:0 0 25px}.footer{border-top:1px solid var(--line);padding:24px 0 30px;display:flex;justify-content:space-between;align-items:center;color:#79849a;font-size:10px}.footer .brand{font-size:12px;color:#c6cede}.footer .brand-mark{width:27px;height:27px;border-radius:8px;font-size:12px}.footer-meta{font:9px var(--mono);letter-spacing:.08em}
+    .reveal{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:translateY(0)}
+    @media(max-width:800px){.hero{grid-template-columns:1fr;padding:75px 0 35px;min-height:unset}.hero-copy{max-width:660px}.visual{height:390px;margin-top:12px}.hero:before{right:5%;top:340px;width:420px;height:420px}.section-head{align-items:start;flex-direction:column}.section-head p{max-width:520px}.lab-panel{grid-template-columns:1fr;gap:20px}.lab-copy{padding:0}.manifesto-inner{align-items:flex-start;flex-direction:column;gap:15px}}
+    @media(max-width:600px){.wrap{width:min(100% - 36px,520px)}.topbar{height:68px}.brand{font-size:13px}.brand-mark{width:32px;height:32px}.menu-toggle{display:block}.nav{display:none;position:absolute;top:67px;left:-18px;right:-18px;padding:20px 24px 23px;background:#0b1020;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:17px}.nav.open{display:flex}.nav-cta{text-align:center}.hero{padding-top:58px}.hero-copy>p{font-size:14px}.visual{height:320px;margin-inline:-18px}.hud{right:3%;top:14%;transform:scale(.88);transform-origin:top right}.label-top{left:9%;top:10%}.data-chip{left:5%;bottom:15%;font-size:8px}.capabilities{padding:77px 0}.cards{grid-template-columns:1fr;gap:11px}.card{min-height:0;padding:22px}.card-icon{margin:18px 0 13px}.lab{padding-bottom:75px}.lab-panel{padding:23px 18px}.lab-copy h2{font-size:27px}.flow{padding:17px 13px}.flow-row{font-size:10px}.manifesto{padding-bottom:72px}.manifesto blockquote{font-size:17px}.contact{padding-bottom:70px}.contact-box{padding:43px 19px}.footer{align-items:flex-start;gap:18px;flex-direction:column}.ticker-track span{padding-inline:23px}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+  </style>
 </head>
 <body>
-    <h1>Welcome to My Website</h1>
-    
-    <div class="section">
-        <h2>About</h2>
-        <p>������ɃT�C�g�̐������L�ڂ��Ă��������B</p>
-    </div>
-
-    <div class="section">
-        <h2>Contact</h2>
-        <p>�A�����񂪂���΋L�ڂ��Ă��������B</p>
-    </div>
+  <canvas class="sky" id="sky" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+  <header class="wrap topbar">
+    <a class="brand" href="#home" aria-label="AI Agent ERP Lab ホーム"><span class="brand-mark">✳</span><span>AI Agent ERP Lab<small>INTELLIGENCE IN MOTION</small></span></a>
+    <button class="menu-toggle" aria-label="メニューを開く" aria-expanded="false">☰</button>
+    <nav class="nav" aria-label="メインナビゲーション"><a href="#vision">ビジョン</a><a href="#capabilities">取り組み</a><a href="#lab">ラボについて</a></nav>
+  </header>
+  <main id="home">
+    <section class="wrap hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><i class="pulse"></i> THE NEXT ERA OF ENTERPRISE</div>
+        <h1><span class="gradient">知能が、</span><br><span class="gradient">業務を動かす。</span></h1>
+        <p>AIエージェントとERPが出会う場所。<br>自律する知能と企業のデータをつなぎ、仕事のあり方を再設計する実験室。</p>
+        <div class="hero-actions"><a class="button button-primary" href="#vision">未来をのぞく <span>↗</span></a><a class="button button-ghost" href="#lab">ラボについて <span>→</span></a></div>
+        <div class="hero-note">THINK · CONNECT · TRANSFORM</div>
+      </div>
+      <div class="visual" aria-label="AIエージェントがERPデータをつなぐアニメーション図"><canvas id="network"></canvas><span class="orb-label label-top">AGENT NETWORK / 01</span><span class="orb-label label-bottom">ERP CORE · CONNECTED</span>
+        <div class="hud"><div class="hud-title">SYSTEM INTELLIGENCE</div><div class="hud-row"><span>Agent activity</span><b>ACTIVE</b></div><div class="hud-meter"><i></i></div><div class="hud-row"><span>Connected nodes</span><b>128</b></div></div>
+        <div class="data-chip"><span>↗</span> HUMAN × AGENT <span>●</span> ERP DATA</div>
+      </div>
+    </section>
+    <div class="ticker" aria-hidden="true"><div class="ticker-track"><span><b>✳</b>AUTONOMOUS AGENTS</span><span><b>✳</b>CONNECTED ENTERPRISE</span><span><b>✳</b>REAL-TIME INTELLIGENCE</span><span><b>✳</b>HUMAN × AI</span><span><b>✳</b>ADAPTIVE OPERATIONS</span><span><b>✳</b>AUTONOMOUS AGENTS</span><span><b>✳</b>CONNECTED ENTERPRISE</span><span><b>✳</b>REAL-TIME INTELLIGENCE</span><span><b>✳</b>HUMAN × AI</span><span><b>✳</b>ADAPTIVE OPERATIONS</span></div></div>
+    <section class="wrap capabilities" id="capabilities">
+      <div class="section-head reveal"><div><div class="section-kicker">What we explore</div><h2>企業の知能を、<br>ひとつ先へ。</h2></div><p>業務の中に眠る可能性を、AIエージェントの力で解き放つ。構想から実装まで、現場とともに探究します。</p></div>
+      <div class="cards">
+        <article class="card reveal"><div class="card-number">01 / CONNECT</div><div class="card-icon">⌘</div><h3>つながるデータ</h3><p>ERPを中心に散在する業務データをつなぎ、エージェントが理解し、活用できる基盤をつくります。</p></article>
+        <article class="card reveal"><div class="card-number">02 / ORCHESTRATE</div><div class="card-icon">⟡</div><h3>協調するエージェント</h3><p>役割を持つAIエージェントが連携。複雑な業務の流れを読み解き、次の一手を実行します。</p></article>
+        <article class="card reveal"><div class="card-number">03 / EVOLVE</div><div class="card-icon">↗</div><h3>進化するオペレーション</h3><p>人とAIがそれぞれの強みを活かす。業務の質とスピードを、継続的にアップデートします。</p></article>
+      </div>
+    </section>
+    <section class="wrap lab" id="lab">
+      <div class="lab-panel reveal"><div class="lab-copy"><div class="section-kicker">Inside the lab</div><h2>アイデアを、<br>動く未来に。</h2><p>AI Agent ERP Lab は、AIエージェントと企業システムの新しい接点を探る実験の場です。小さく試し、知見を共有し、確かな変化へとつなげます。</p></div>
+        <div class="flow" aria-label="エージェントの業務フロー例"><div class="flow-top"><span>AGENT WORKFLOW / LIVE PREVIEW</span><span class="live">● RUNNING</span></div><div class="flow-line"></div><div class="flow-list"><div class="flow-row"><span class="flow-icon">⌕</span><span>受注データを検知</span><span class="flow-status done">COMPLETED</span></div><div class="flow-row"><span class="flow-icon">◈</span><span>在庫・納期を照合</span><span class="flow-status">PROCESSING</span></div><div class="flow-row"><span class="flow-icon">↗</span><span>最適な対応案を提示</span><span class="flow-status">NEXT UP</span></div></div></div>
+      </div>
+    </section>
+    <section class="wrap manifesto" id="vision"><div class="manifesto-inner reveal"><blockquote>「人が判断し、AIが支える」から、<br><span>「人とAIが、ともに前へ進む」</span>へ。</blockquote><cite>OUR VISION — AUGMENTED ENTERPRISE</cite></div></section>
+  </main>
+  <footer class="wrap footer"><a class="brand" href="#home"><span class="brand-mark">✳</span><span>AI Agent ERP Lab</span></a><div class="footer-meta">© 2026 AI AGENT ERP LAB · EXPLORE WHAT'S NEXT</div></footer>
+  <script>
+    (()=>{
+      const sky=document.getElementById('sky'),skyCtx=sky.getContext('2d');let skyW=0,skyH=0,skyDpr=1,skyRaf=0,skyTick=0,stars=[],meteors=[],nextMeteor=150;
+      function resizeSky(){skyDpr=Math.min(devicePixelRatio||1,1.5);skyW=innerWidth;skyH=innerHeight;sky.width=skyW*skyDpr;sky.height=skyH*skyDpr;skyCtx.setTransform(skyDpr,0,0,skyDpr,0,0);stars=Array.from({length:Math.min(230,Math.floor(skyW*skyH/6500))},()=>({x:Math.random()*skyW,y:Math.random()*skyH,r:.35+Math.random()*1.15,phase:Math.random()*Math.PI*2,speed:.012+Math.random()*.035,hue:Math.random()<.22?'115,222,255':'211,226,255'}));drawSky()}
+      function drawSky(){skyCtx.clearRect(0,0,skyW,skyH);for(const s of stars){const twinkle=.2+.8*(.5+.5*Math.sin(s.phase+skyTick*s.speed));skyCtx.beginPath();skyCtx.arc(s.x,s.y,s.r*(.75+twinkle*.5),0,Math.PI*2);skyCtx.fillStyle=`rgba(${s.hue},${.18+twinkle*.62})`;skyCtx.fill();if(s.r>1.15&&twinkle>.82){skyCtx.strokeStyle=`rgba(${s.hue},${(twinkle-.82)*1.5})`;skyCtx.lineWidth=.6;skyCtx.beginPath();skyCtx.moveTo(s.x-3,s.y);skyCtx.lineTo(s.x+3,s.y);skyCtx.moveTo(s.x,s.y-3);skyCtx.lineTo(s.x,s.y+3);skyCtx.stroke()}}
+        if(!matchMedia('(prefers-reduced-motion: reduce)').matches){if(--nextMeteor<=0){meteors.push({x:Math.random()*skyW*.85+skyW*.05,y:Math.random()*skyH*.38,len:65+Math.random()*95,v:7+Math.random()*5,life:0,max:34+Math.random()*20,angle:Math.PI*.22+Math.random()*.15});nextMeteor=180+Math.random()*330}meteors=meteors.filter(m=>m.life<m.max);for(const m of meteors){m.x+=Math.cos(m.angle)*m.v;m.y+=Math.sin(m.angle)*m.v;m.life++;const fade=Math.min(1,m.life/7,(m.max-m.life)/12);const tail=skyCtx.createLinearGradient(m.x,m.y,m.x-Math.cos(m.angle)*m.len,m.y-Math.sin(m.angle)*m.len);tail.addColorStop(0,`rgba(221,250,255,${fade*.9})`);tail.addColorStop(1,'rgba(115,170,255,0)');skyCtx.strokeStyle=tail;skyCtx.lineWidth=1.5;skyCtx.beginPath();skyCtx.moveTo(m.x,m.y);skyCtx.lineTo(m.x-Math.cos(m.angle)*m.len,m.y-Math.sin(m.angle)*m.len);skyCtx.stroke()}skyTick++;skyRaf=requestAnimationFrame(drawSky)}}
+      addEventListener('resize',resizeSky,{passive:true});resizeSky();
+      const canvas=document.getElementById('network'),ctx=canvas.getContext('2d'),box=canvas.parentElement;
+      let w=0,h=0,dpr=1,tick=0,raf=0,points=[];
+      const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+      function resize(){const r=box.getBoundingClientRect();dpr=Math.min(devicePixelRatio||1,2);w=r.width;h=r.height;canvas.width=w*dpr;canvas.height=h*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);points=Array.from({length:62},(_,i)=>{const a=i*2.399,b=.12+((i*37)%97)/120;return{x:w/2+Math.cos(a)*w*.37*b,y:h/2+Math.sin(a)*h*.39*b,phase:i*1.71,size:i%9===0?2.2:1.1}});draw()}
+      function draw(){ctx.clearRect(0,0,w,h);const cx=w*.52,cy=h*.51;const scale=1+Math.sin(tick*.009)*.018;
+        // Orbital rings
+        for(let i=0;i<4;i++){ctx.beginPath();ctx.ellipse(cx,cy,Math.min(w*.35,175)+i*17,Math.min(h*.31,145)+i*13,-.35+i*.14,0,Math.PI*2);ctx.strokeStyle=`rgba(${i%2?'112,148,255':'105,232,218'},${.12-i*.02})`;ctx.lineWidth=1;ctx.stroke()}
+        // Core glow and geometric mark
+        const glow=ctx.createRadialGradient(cx,cy,3,cx,cy,105);glow.addColorStop(0,'rgba(115,245,227,.22)');glow.addColorStop(.38,'rgba(112,148,255,.10)');glow.addColorStop(1,'rgba(112,148,255,0)');ctx.fillStyle=glow;ctx.beginPath();ctx.arc(cx,cy,105,0,Math.PI*2);ctx.fill();
+        const rot=tick*.004;ctx.save();ctx.translate(cx,cy);ctx.rotate(rot);ctx.strokeStyle='rgba(148,226,239,.58)';ctx.lineWidth=1;ctx.beginPath();for(let i=0;i<6;i++){const a=i*Math.PI/3-Math.PI/2,r=28*scale;const x=Math.cos(a)*r,y=Math.sin(a)*r;i?ctx.lineTo(x,y):ctx.moveTo(x,y)}ctx.closePath();ctx.stroke();ctx.restore();ctx.fillStyle='#c1fff5';ctx.shadowBlur=22;ctx.shadowColor='#71f2dc';ctx.beginPath();ctx.arc(cx,cy,4,0,Math.PI*2);ctx.fill();ctx.shadowBlur=0;
+        const moved=points.map(p=>({x:cx+(p.x-cx)*scale+Math.sin(tick*.012+p.phase)*4,y:cy+(p.y-cy)*scale+Math.cos(tick*.01+p.phase)*4,phase:p.phase,size:p.size}));
+        for(let i=0;i<moved.length;i++){const p=moved[i],twinkle=.48+.52*(.5+.5*Math.sin(tick*.055+p.phase));let nearest=[];for(let j=0;j<moved.length;j++){if(i===j)continue;const q=moved[j],d=Math.hypot(p.x-q.x,p.y-q.y);if(d<94)nearest.push({q,d})}nearest.sort((a,b)=>a.d-b.d).slice(0,3).forEach(({q,d})=>{ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.strokeStyle=`rgba(112,172,222,${(.14*(1-d/94))})`;ctx.lineWidth=.7;ctx.stroke()});ctx.fillStyle=p.size>2?`rgba(116,246,225,${.3+twinkle*.62})`:`rgba(153,182,231,${.18+twinkle*.6})`;if(p.size>2){ctx.shadowBlur=twinkle*9;ctx.shadowColor='#8efff0'}ctx.beginPath();ctx.arc(p.x,p.y,p.size*(.78+twinkle*.4),0,Math.PI*2);ctx.fill();ctx.shadowBlur=0}
+        // Traveling signal pulses
+        for(let i=0;i<5;i++){const a=tick*.012+i*Math.PI*2/5,rx=Math.min(w*.35,175)+15,ry=Math.min(h*.31,145)+12;const x=cx+Math.cos(a)*rx*Math.cos(-.2)-Math.sin(a)*ry*Math.sin(-.2),y=cy+Math.cos(a)*rx*Math.sin(-.2)+Math.sin(a)*ry*Math.cos(-.2);ctx.fillStyle='#87fff0';ctx.shadowBlur=11;ctx.shadowColor='#71f2dc';ctx.beginPath();ctx.arc(x,y,2,0,Math.PI*2);ctx.fill();ctx.shadowBlur=0}
+        tick++;if(!reduce)raf=requestAnimationFrame(draw)
+      }
+      const observer=new ResizeObserver(resize);observer.observe(box);resize();
+      const menu=document.querySelector('.menu-toggle'),nav=document.querySelector('.nav');menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',open);menu.setAttribute('aria-label',open?'メニューを閉じる':'メニューを開く');menu.textContent=open?'×':'☰'});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.setAttribute('aria-label','メニューを開く');menu.textContent='☰'}));
+      const revealObserver=new IntersectionObserver(entries=>entries.forEach((e,i)=>{if(e.isIntersecting){e.target.style.transitionDelay=`${(i%3)*90}ms`;e.target.classList.add('visible');revealObserver.unobserve(e.target)}}),{threshold:.14});document.querySelectorAll('.reveal,.card').forEach(el=>revealObserver.observe(el));
+      document.addEventListener('visibilitychange',()=>{if(document.hidden){cancelAnimationFrame(raf);cancelAnimationFrame(skyRaf)}else if(!reduce){draw();drawSky()}});
+    })();
+  </script>
 </body>
 </html>
