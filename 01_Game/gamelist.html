@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080b16">
+  <meta name="description" content="ERPの業務プロセスとAIエージェントを体験できるゲーム一覧です。">
+  <title>ERP習得ゲーム | AI Agent ERP Lab</title>
+  <style>
+    :root{color-scheme:dark;--bg:#080b16;--panel:#101629;--ink:#f4f7ff;--muted:#a3acc1;--cyan:#73f5e3;--violet:#b492ff;--line:rgba(185,205,255,.16);--mono:"SFMono-Regular",Consolas,"Liberation Mono",monospace;--sans:Inter,"Noto Sans JP","Hiragino Kaku Gothic ProN",Meiryo,sans-serif}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.7;overflow-x:hidden}body:before{content:"";position:fixed;z-index:0;pointer-events:none;inset:-30%;background:radial-gradient(ellipse at 22% 22%,rgba(41,67,153,.23),transparent 35%),radial-gradient(ellipse at 78% 38%,rgba(69,35,132,.2),transparent 32%),radial-gradient(ellipse at 55% 90%,rgba(17,91,119,.15),transparent 36%);filter:blur(48px)}a{color:inherit;text-decoration:none}.wrap{width:min(1000px,calc(100% - 48px));margin-inline:auto}.topbar,main,footer{position:relative;z-index:1}.topbar{height:82px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:11px;font-size:13px;font-weight:700}.brand-mark{width:34px;height:34px;display:grid;place-items:center;border:1px solid rgba(115,245,227,.45);border-radius:10px;color:var(--cyan);box-shadow:0 0 25px rgba(115,245,227,.12)}.back{color:#b9c4d7;font-size:12px;transition:color .2s}.back:hover{color:var(--cyan)}.hero{padding:76px 0 38px}.eyebrow{display:flex;align-items:center;gap:10px;color:var(--cyan);font:10px var(--mono);letter-spacing:.18em;text-transform:uppercase}.eyebrow:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 12px var(--cyan)}h1{margin:18px 0 12px;font-size:clamp(30px,5vw,48px);line-height:1.25;letter-spacing:-.04em}.gradient{background:linear-gradient(105deg,#f5f7ff 8%,#b8c9ff 50%,#79f4df 100%);-webkit-background-clip:text;background-clip:text;color:transparent}.lead{max-width:640px;margin:0;color:var(--muted);font-size:14px;line-height:2}.game-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;padding:18px 0 86px}.game-card{position:relative;display:flex;min-height:230px;flex-direction:column;padding:25px;border:1px solid rgba(180,146,255,.42);border-radius:9px;background:linear-gradient(145deg,rgba(42,39,75,.88),rgba(14,20,38,.96));transition:transform .22s,border-color .22s,box-shadow .22s}.game-card:hover{transform:translateY(-3px);border-color:rgba(180,146,255,.82);box-shadow:0 14px 36px rgba(93,70,157,.2)}.game-card:focus-visible,.back:focus-visible{outline:2px solid var(--cyan);outline-offset:4px}.badge{align-self:flex-start;padding:5px 9px;border-radius:4px;background:rgba(180,146,255,.16);color:#d1bdff;font:9px var(--mono);letter-spacing:.1em}.game-card h2{margin:17px 0 8px;font-size:19px;line-height:1.45}.game-card p{margin:0;color:#aeb9cd;font-size:12px;line-height:1.9}.card-footer{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:20px;color:#cbb8ff;font-size:11px}.card-footer span:last-child{font-size:17px}.footer{display:flex;justify-content:space-between;gap:20px;padding:22px 0 30px;border-top:1px solid var(--line);color:#8994aa;font-size:10px}.footer a{color:var(--cyan)}
+    @media(max-width:640px){.wrap{width:calc(100% - 36px)}.topbar{height:70px}.brand{font-size:11px}.hero{padding:57px 0 24px}.game-grid{grid-template-columns:1fr;gap:12px;padding-bottom:60px}.game-card{min-height:205px;padding:22px}.footer{flex-direction:column;gap:8px}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important}}
+  </style>
+</head>
+<body>
+  <header class="wrap topbar"><a class="brand" href="../index.html"><span class="brand-mark">✳</span><span>AI Agent ERP Lab</span></a><a class="back" href="../index.html">トップページへ戻る ←</a></header>
+  <main class="wrap">
+    <section class="hero"><div class="eyebrow">ERP LEARNING GAMES</div><h1><span class="gradient">ERP習得ゲーム</span></h1><p class="lead">業務の流れやAIエージェントとの協働を、ゲームを通して体験できます。プレイしたいゲームを選んでください。</p></section>
+    <section class="game-grid" aria-label="ゲーム一覧">
+      <a class="game-card" href="./01_order-to-cash-game.html"><span class="badge">GAME 01 · ORDER TO CASH</span><h2>受注から入金まで</h2><p>受注、在庫確認、出荷、請求、入金まで。販売業務の一連の流れと判断ポイントを体験します。</p><span class="card-footer"><span>ゲームを始める</span><span>→</span></span></a>
+      <a class="game-card" href="./02_invoice-agent-training-game.html"><span class="badge">GAME 02 · INVOICE AGENT TRAINING</span><h2>請求書処理AIエージェント育成ゲーム</h2><p>請求書の読み取りや発注書との照合を通して、AIエージェントの品質と人の確認ポイントを学びます。</p><span class="card-footer"><span>ゲームを始める</span><span>→</span></span></a>
+      <a class="game-card" href="./03_erp-intro-quest.html"><span class="badge">GAME 03 · ERP INTRO QUEST</span><h2>ERP入門クエスト</h2><p>購買・在庫・生産・販売・会計を巡り、部門をつなぐ業務データの流れを学びます。</p><span class="card-footer"><span>ゲームを始める</span><span>→</span></span></a>
+    </section>
+  </main>
+  <footer class="wrap footer"><span>© 2026 AI AGENT ERP LAB</span><a href="../index.html">AI Agent ERP Lab トップページ</a></footer>
+</body>
+</html>
