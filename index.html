@@ -52,7 +52,7 @@
     </section>
         <section class="wrap hero-resources" aria-label="最新記事">
       <article class="latest-post" aria-labelledby="latest-post-title">
-        <div class="latest-post-head"><div><span class="blog-badge">LATEST ARTICLE</span><h3 id="latest-post-title">最新記事を読み込み中…</h3></div></div>
+        <div class="latest-post-head"><div><span class="blog-badge">LATEST ARTICLE</span><h3 id="latest-post-title">最新記事を読み込み中…</h3><span id="latest-post-date" class="latest-post-date"></span></div></div>
         <iframe id="latest-post-frame" class="latest-post-frame" title="ブログの最新記事" src="about:blank" loading="lazy"></iframe>
         <div class="latest-post-footer"><a id="latest-post-link" href="https://ai-agent-erp-lab.blogspot.com/" target="_blank" rel="noopener noreferrer">ブログを開く ↗</a></div>
       </article>
@@ -108,6 +108,7 @@
       const title=document.getElementById('latest-post-title');
       const frame=document.getElementById('latest-post-frame');
       const articleLink=document.getElementById('latest-post-link');
+      const date=document.getElementById('latest-post-date');
       window.renderLatestBloggerPost=(data)=>{
         const entry=data&&data.feed&&data.feed.entry&&data.feed.entry[0];
         if(!entry){title.textContent='最新記事を読み込めませんでした';return;}
@@ -115,7 +116,7 @@
         if(!url||!url.startsWith('https://ai-agent-erp-lab.blogspot.com/')){title.textContent='最新記事を読み込めませんでした';return;}
         title.textContent=entry.title?.$t||'最新記事';
         const published=entry.published?.$t;
-        if(published)date.textContent=new Date(published).toLocaleDateString('ja-JP',{year:'numeric',month:'long',day:'numeric'});
+        if(published&&date)date.textContent=new Date(published).toLocaleDateString('ja-JP',{year:'numeric',month:'long',day:'numeric'});
         articleLink.href=url;
         articleLink.textContent='ブログで続きを読む ↗';
         const frameUrl=new URL(url);
